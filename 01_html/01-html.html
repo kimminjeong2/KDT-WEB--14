@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML 기초</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>h1태그 입니다.</h1>
     <h2>h2태그 입니다.</h2>
     <h3>h3태그 입니다.</h3>
@@ -13,31 +13,105 @@
     <h5>h5태그 입니다.</h5>
     <h6>h6태그 입니다.</h6>
 
-    <p>본문입니다. <br>
-        두번째 줄입니다.
+    <p>
+      본문입니다. <br />
+      두번째 줄입니다.
     </p>
-    
-    <ul type+"none">
-        <li>사과</li>
-        <li>바나나</li>
-        <li>포도</li>
+
+    <ul type="none">
+      <li>사과</li>
+      <li>바나나</li>
+      <li>포도</li>
     </ul>
 
     <!-- type : 1, A, a, I, i-->
     <!-- start : 시작번호 -->
     <!-- reversed : 역순으로 -->
-<ol type ="A" start="3">
-    <li>사과</li>
-    <li>바나나</li>
-    <li>포도</li>
-</ol>
+    <ol type="A" start="3">
+      <li>사과</li>
+      <li>바나나</li>
+      <li>포도</li>
+    </ol>
 
-<hr>
-<b>굵게</b>
-<strong>굵게 + 의미도강조</strong>
-<i>이탤릭체</i>
-<em>이탤릭체 + 의미도강조</em>
-<del>중간줄(취소선)</del>
-<u>밑줄</u>
-</body>
+    <hr />
+    <b>굵게</b>
+    <strong>굵게 + 의미도강조</strong>
+    <i>이탤릭체</i>
+    <em>이탤릭체 + 의미도강조</em>
+    <del>중간줄(취소선)</del>
+    <u>밑줄</u>
+
+    <!-- day 2 -->
+    <!-- 상대경로 : 현재 파일의 위치 기준 -->
+    <img src="./고양이2.jpeg" art="고양이2" />
+    <!-- 절대경로 : 서버의 처음 주소부터 접근-->
+    <!-- pc의 절대경로-->>
+    <img
+      src="file:///Users/gimminjeong/Desktop/github/KDT-WEB--14/01_html/고양이2.jpeg"
+      art="고양이2"
+    />
+    <!-- 라이브 서버 절대 경로-->
+    <br />
+    <!-- a 태그 -->
+    <a href="http://www.naver.com">네이버</a>
+    <a href="http://www.naver.com" target="_blank">네이버(blank)</a>
+    <a href="http://www.naver.com" target="_self">네이버(self)</a>
+
+    <!-- form  태그 : 입력 폼을 감싸고 있는 태그-->
+    <form>
+      <input type="button" value="버튼" />
+      <input type="text" placeholder="text" />
+      <input type="password" placeholder="password" />
+      <!-- 체크박스 : 여러개 사용가능
+        name : 체크박스들을 묶어준다.(식별값)
+        value : 실제로 체크박스 값을 가벼올때 나오는 값-->
+      <input type="checkbox" namer="fruits" value="=apple" checked />사과
+      <input type="checkbox" name="fruits" value="banana" />바나나
+      <!-- 라디오 : 하나만 선택 가능
+      name, value : 체크박스와 동일
+      checked 는 체크미리 되어있는것-->
+      <input type="radio" name="gender" value="man" checked />남자
+      <input type="radio" name="gender" value="mwoman" />여자
+      <!-- 년 월 일 -->
+      <input type="date" />
+      <!-- 날짜 + 시간-->
+      <input type="datetime-local" />
+      <!--select-->
+      <select>
+        <optgroup label="커피">
+          <option value="americano">아메리카노</option>
+          <option value="cafelatte">카페라떼</option>
+          <option value="espresso">에스프레소</option>
+        </optgroup>
+        <optgroup label="티">
+          <option value="earlgrey">얼그레이티</option>
+          <option value="jasmin">자스민티</option>
+        </optgroup>
+      </select>
+    </form>
+    <hr />
+    <!--table-->
+    <!--colspan : 해당칸이 점유하는 열의 수 지정
+    rowspan : 해당칸이 점유하는 행의 수 지정 -->
+    <table border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>이름</th>
+        <th>나이</th>
+        <th>전화번호</th>
+      </tr>
+      <tr>
+        <td>민정</td>
+        <td>25</td>
+        <td>01012345678</td>
+      </tr>
+      <tr>
+        <td rowspan="2">홍길동</td>
+        <td colspan="2">100</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>01023456543</td>
+      </tr>
+    </table>
+  </body>
 </html>

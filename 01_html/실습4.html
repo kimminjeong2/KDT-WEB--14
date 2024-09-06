@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!--colspan : 해당칸이 점유하는 열의 수 지정
+    rowspan : 해당칸이 점유하는 행의 수 지정 -->
+    <table border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>구분</th>
+        <th>음료</th>
+        <th>가격</th>
+        <th>사진</th>
+      </tr>
+      <tr>
+        <td rowspan="2">커피류</td>
+        <td>아메리카노</td>
+        <td>4200원</td>
+        <td><a href="아메리카노"target="_blank">
+          <img src="./아메리카노.jpg" art="아메리카노" width="100" height="100"/></a></td>
+    </tr>
+    <tr>
+      <th>돌체라떼</th>
+      <th>4800원</th>
+      <th><img src="./돌체라떼.jpg" art="돌체라떼"width="100" height="100" /></th>
+    </tr>
+    <tr>
+      <td rowspan="2">주스류</td>
+      <td> 자바칩 프라푸치노</td>
+      <td rowspan="2">5000원</td>
+      <td><img src="./자바칩프라푸치노.jpg" art="자바칩프라푸치노" width="100" height="100"/></td>
+    </tr>
+    <tr>
+      <td>녹차푸라프치노</td>
+      <td><img src="./녹차.jpg" art="녹차" width="100" height="100"/></td>
+    </tr>
+</body>
+</html>
