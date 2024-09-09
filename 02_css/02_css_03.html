@@ -10,45 +10,65 @@
       href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap"
       rel="stylesheet"
     />
-    <title>css03</title>
+    <title>CSS03</title>
   </head>
-  <style="margin: 0">
+  <body style="margin: 0">
     <div class="box">
       <p>text</p>
     </div>
 
     <!-- font-family -->
     <p class="google">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ullam
-      quis perferendis voluptates vel doloremque nemo. Sit quidem commodi
-      consequatur exercitationem quas iusto ex officia labore perferendis.
-      Dolor, aliquam qui.
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem qui mollitia
+      hic necessitatibus perspiciatis aliquid ad. Obcaecati iste vero,
+      praesentium voluptate harum repudiandae assumenda totam quas vel ducimus
+      minima ipsa.
     </p>
     <p class="noon">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sunt
-      voluptatibus amet adipisci mollitia, facilis accusamus eaque neque!
-      Voluptatibus blanditiis nesciunt harum quos at facere necessitatibus
-      quaerat alias dolore numquam.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque repellat
+      minima officia, consectetur voluptates provident! Provident ipsum tempore
+      veniam minima ea repellendus aperiam rerum, quia, sunt officiis recusandae
+      architecto dolores.
     </p>
 
-    <!--인라인&블록-->
-    <span style="background-color: yellow;">hello</span>
-    <span style="background-color: yellow;">world</span>
+    <!-- inline & block -->
+    <span style="background-color: yellow; width: 100px"><div>Hello</div></span>
+    <span style="background-color: yellow">World</span>
 
     <div style="background-color: orange; width: 100px; display: inline-block">
-      hello
+      Hello
     </div>
-    <div style="background-color: red">world</div>
+    <div style="background-color: red">World</div>
 
-    <!--margin-->
-    <div style="width: 200px; height:200px; background-color:blue; margin:10px;"></div>
-    <span style= "width: 200px; height:200px; background-color:blue; margin:-20px;">
+    <!-- margin -->
+    <div
+      style="width: 200px; height: 200px; background-color: blue; margin: auto"
+    ></div>
 
-<!-- widt & height-->
-<!-- vw, vh단위 : 브라우저 기준으로 반응형 적용-->
-<div style=""
+    <span>margin 마이너스?</span>
+    <div
+      style="
+        width: 200px;
+        height: 200px;
+        background-color: rgb(0, 255, 64);
+        margin: -20px;
+      "
+    ></div>
 
+    <!-- width & height -->
+    <!-- vw, vh단위 : 브라우저 기준으로 반응형 적용 -->
+    <div style="background-color: aqua; width: 80vw; height: 100px"></div>
 
-
+    <!-- max-width/height & min-width/height -->
+    <div
+      style="
+        background-color: orange;
+        width: calc(30vw - 100px);
+        height: 30vw;
+        max-width: 400px;
+        min-width: 200px;
+      "
+    ></div>
+    <div style="height: 100px">안녕하세요</div>
   </body>
 </html>
