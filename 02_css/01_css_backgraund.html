@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>background</title>
+    <style>
+      div {
+        width: 300px;
+        height: 200px;
+        margin-bottom: 30px;
+      }
+
+      .grad-1 {
+        background: linear-gradient(gray, tomato);
+      }
+      .grad-2 {
+        background: linear-gradient(90deg, grey, tomato);
+        background: linear-gradient(to left, grey, tomato);
+      }
+      .grad-3 {
+        background: linear-gradient(90deg, grey, 75%, tomato);
+      }
+      .grad-4 {
+        background: linear-gradient(green, gray, tomato);
+      }
+
+      /* background-image */
+      .background-image {
+        background-color: orange;
+        background-image: url(https://item.kakaocdn.net/do/d84248170c2c52303db27306a00fb861f604e7b0e6900f9ac53a43965300eb9a);
+        width: 500px;
+        height: 500px;
+
+        /* background-repeat */
+        background-repeat: repeat; /* default */
+        background-repeat: repeat-x;
+        background-repeat: repeat-y;
+        background-repeat: no-repeat;
+
+        /* bavkground-pdsition */
+        background-position: left top;
+        background-position: center;
+        background-position: 10px 10px; /* x축, y축 */
+        /* 숫자값을 하나만 입력하면 x축에 대해서만 적용 */
+        background-position: 300px;
+
+        /* background-size */
+        /* cover: 더 넓은값에 맞춘다.  contain: 더 짧은 값에 맞춘다. */
+        background-size: auto; /* default */
+        background-size: 100px;
+        background-size: 100px 50px;
+        background-size: cover;
+        background-size: contain;
+      }
+
+      .scroll {
+        background-image: url("https://item.kakaocdn.net/do/d84248170c2c52303db27306a00fb861f604e7b0e6900f9ac53a43965300eb9a");
+        overflow: scroll;
+        background-repeat: no-repeat;
+        width: 500px;
+        height: 500px;
+        /* background-attachment : 요소의 배경 이미지 스크롤 특성 */
+        background-attachment: scroll; /* default */
+        background-attachment: fixed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grad-1"></div>
+    <div class="grad-2"></div>
+    <div class="grad-3"></div>
+    <div class="grad-4"></div>
+
+    <hr />
+
+    <div class="background-image"></div>
+    <div class="scroll">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum totam
+      pariatur fugit corrupti aut ipsam porro, distinctio minima alias quas ab
+      temporibus, eveniet nulla, non deserunt atque! Eaque, nostrum? Odio? Fugit
+      in libero illo debitis dolores, autem quas dolorem sunt laboriosam minus
+      placeat dolore ad nesciunt? Voluptatum labore adipisci nam asperiores
+      perspiciatis nobis harum quae? Error blanditiis molestias aliquid
+      deserunt?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum
+      totam pariatur fugit corrupti aut ipsam porro, distinctio minima alias
+      quas ab temporibus, eveniet nulla, non deserunt atque! Eaque, nostrum?
+      Odio? Fugit in libero illo debitis dolores, autem quas dolorem sunt
+      laboriosam minus placeat dolore ad nesciunt? Voluptatum labore adipisci
+      nam asperiores perspiciatis nobis harum quae? Error blanditiis molestias
+      aliquid deserunt?
+    </div>
+  </body>
+</html>
