@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css_06_실습2. 크기에 따라 자리 바꾸기</title>
+    <style>
+      .box {
+        height: 100px;
+        width: 100px;
+        border-radius: 10%;
+        margin: 10px;
+        border: 1px solid red;
+      }
+      @media screen and (min-width: 700px) {
+        .box {
+          display: inline-block;
+          background-color: black;
+        }
+      }
+      @media screen and (max-width: 700px) {
+        .box {
+          background-color: skyblue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </body>
+</html>
