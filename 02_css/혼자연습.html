@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>혼자연습</title>
+    <style>
+      @media screen and (orientation: landscape) {
+        /* 가로모드 */
+        body {
+          background-color: red;
+        }
+      }
+
+      @media screen and (orientation: portrait) {
+        /* 세로모드 */
+        body {
+          background-color: blue;
+        }
+      }
+
+      /* ~부터 ~까지 범위 작성 */
+      @media screen and (300px, 600px) {
+        div {
+          background-color: brown;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>more and less</div>
+  </body>
+</html>
