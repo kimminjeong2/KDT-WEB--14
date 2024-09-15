@@ -7,24 +7,43 @@
   </head>
   <body>
     <script>
-      // 문자 형변환
-      // string(변환할 값), or 변환할 값.toString()
-      //toString() -> null, undefined 사용 X
+      /*console.log(100 + 200); // 결과: 300
+      console.log(50 + "점"); // 결과: "50점"
+      console.log("10" + "점"); // 결과: "10점"
+      console.log("10" + false); // 결과: "10false" (여기서 false는 문자열 "false"로 변환됨)
+      console.log(99 + true); // 결과: 100 (true는 숫자 1로 변환됨)
+      */
 
-      let str1 = true;
-      let str2 = 123;
-      let str3 = null;
+      //다른 연산자(-,*,/,%)
+      /* let string = "string"; // 문자열 변수
+      let number = 2; // 숫자 변수
+      let boolean = true;
+      console.log(string * number); // number
+      console.log(string * string); // number
+      console.log(number * number); // number
+      console.log(string * boolean); //number
+      console.log(number * boolean); //number
+      console.log("2" * false); //0
+      console.log(2 * true); //2
+      */
+      /*let result1, result2;
+      let num1 = 10;
+      let num2 = 10;
 
-      console.log(String(str1)); //true
-      console.log(typeof String(str1)); //string
-      console.log(typeof str1); // boolean 기준의 값은 변환이 안됨.
+      result1 = num = num1++;
+      console.log("resurt1", result1);
+      console.log("num1", num1);
 
-      console.log(str1.toString()); //true
-      console.log(typeof str1.toString()); //string
-      console.log(typeof str1); //boolean
-
-      console.log(String(str3)); //null
-      console.log(str.toString()); //error
+      result2 = num = ++num2;
+      console.log("resurt2", result2);
+      console.log("num2", num2);
+      */
+      let a = 1;
+      let b = "1";
+      // 비교 연산자
+      console.log(a == b);
+      // 일치 연산자
+      console.log(a === b);
     </script>
   </body>
 </html>
