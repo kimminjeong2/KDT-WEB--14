@@ -7,9 +7,24 @@
   </head>
   <body>
     <script>
-      const prompMassage = "프롬포트에 표시할 문자열";
-      const result = prompt(prompMassage);
-      console.log(result);
+      // 문자 형변환
+      // string(변환할 값), or 변환할 값.toString()
+      //toString() -> null, undefined 사용 X
+
+      let str1 = true;
+      let str2 = 123;
+      let str3 = null;
+
+      console.log(String(str1)); //true
+      console.log(typeof String(str1)); //string
+      console.log(typeof str1); // boolean 기준의 값은 변환이 안됨.
+
+      console.log(str1.toString()); //true
+      console.log(typeof str1.toString()); //string
+      console.log(typeof str1); //boolean
+
+      console.log(String(str3)); //null
+      console.log(str.toString()); //error
     </script>
   </body>
 </html>
