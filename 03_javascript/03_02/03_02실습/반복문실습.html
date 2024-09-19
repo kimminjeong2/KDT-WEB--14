@@ -6,6 +6,7 @@
     <title>반복문 실습</title>
     <script>
       /* 
+      (타입1)
       let num = prompt("숫자를 입력하세요.");
       let i = 13;
 
@@ -18,7 +19,14 @@
 
       console.log("while문 탈출!");
       */
-
+      /*
+      (타입2)
+      for (let i = 1; i < 1000; i++) {
+        if (i % 13 == 0 && i % 2 == 1) {
+      console.log(i);
+        }
+      }
+      */
       /* 내가 만든 틀린거
       let num = ("2", "3", "4", "5", "6", "7", "8", "9");
       let i = num;
@@ -31,6 +39,7 @@
       */
 
       /* 실습2
+      (타입1)
       for (let num = 2; num <= 9; num++) {
         console.log(num + "단:");
         for (let i = 1; i <= 9; i++) {
@@ -39,12 +48,45 @@
         console.log("");
       }
         */
+      /*
+      (타입2)
       let sum = 0;
 
       for (let i = 0; i <= 9; i++) {
         if (i % 2 == 0 || i % 5 == 0) sum += i;
       }
       console.log("sum", sum);
+
+      /* 
+      (타입3)
+      let i = 2,
+        j = 1;
+      while (i < 10) {
+        while (j < 10) {
+          console.log(`${i} x ${j} = ${i * j}`);
+          j++;
+        }
+        i++;
+        j = 1;
+      }
+      */
+      /*실습3*/
+      let sum = 0; // 합계를 저장할 변수를 0으로 초기화
+      let n = 1; // n 변수를 1로 초기화
+
+      while (true) {
+        // 무한 루프 시작
+        // n이 2의 배수이거나 3의 배수인지 확인
+        if (n % 2 == 0 || n % 3 == 0) {
+          // n이 100에 도달하면 루프 종료
+          if (n == 100) break;
+          // n을 sum에 더함
+          sum += n;
+        }
+        n++; // n을 1 증가
+      }
+
+      console.log(sum); // 최종 합계를 출력
     </script>
   </head>
   <body></body>
