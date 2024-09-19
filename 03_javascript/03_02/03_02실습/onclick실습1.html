@@ -1,0 +1,75 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>onclick 실습1</title>
+    <script>
+      let num1 = Number(prompt("첫번째 숫자를 입력하세요.")); // prompt는 문자열로 입력받음
+      let num2 = prompt("두번째 숫자를 입력하세요.");
+
+      num1 = Number(num1);
+      num2 = Number(num2);
+
+      function test(num) {
+        function add(num1, num2) {
+          alert(Number(num1)) + Number(num2);
+        }
+        function sub(num) {
+          alert(Number(num1, num2)) - Number(num2);
+        }
+        function divide(num) {
+          alert(Number(num1, num2)) * Number(num2);
+        }
+        function mul(num) {
+          alert(Number(num1, num2)) / Number(num2);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="add(num1 + num2)">더하기</button>
+    <button onclick="sub(num1 - num2)">빼기</button>
+    <button onclick="divide(num1 * num2)">곱하기</button>
+    <button onclick="mul(num1 / num2)">나누기</button>
+  </body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>onclick 실습1</title>
+    <script>
+      let num1 = Number(prompt("첫번째 숫자를 입력하세요."));
+      let num2 = Number(prompt("두번째 숫자를 입력하세요."));
+
+      function add() {
+        alert(num1 + num2);
+      }
+
+      function sub() {
+        alert(num1 - num2);
+      }
+
+      function mul() {
+        alert(num1 * num2);
+      }
+
+      function divide() {
+        if (num2 !== 0) {
+          alert(num1 / num2);
+        } else {
+          alert("0으로 나눌 수 없습니다.");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="add()">더하기</button>
+    <button onclick="sub()">빼기</button>
+    <button onclick="mul()">곱하기</button>
+    <button onclick="divide()">나누기</button>
+  </body>
+</html>

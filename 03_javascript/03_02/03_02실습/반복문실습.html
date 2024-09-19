@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반복문 실습</title>
+    <script>
+      /* 
+      let num = prompt("숫자를 입력하세요.");
+      let i = 13;
+
+      while (i < 10000) {
+        if (i % 2 !== 0) {
+          console.log("i :", i);
+        }
+        i += 13;
+      }
+
+      console.log("while문 탈출!");
+      */
+
+      /* 내가 만든 틀린거
+      let num = ("2", "3", "4", "5", "6", "7", "8", "9");
+      let i = num;
+      for (let i = num; i < 10; i) {
+        if ((i = num)) {
+          console.log("i :" * i);
+        }
+        break;
+      }
+      */
+
+      /* 실습2
+      for (let num = 2; num <= 9; num++) {
+        console.log(num + "단:");
+        for (let i = 1; i <= 9; i++) {
+          console.log(num + " * " + i + " = " + num * i);
+        }
+        console.log("");
+      }
+        */
+      let sum = 0;
+
+      for (let i = 0; i <= 9; i++) {
+        if (i % 2 == 0 || i % 5 == 0) sum += i;
+      }
+      console.log("sum", sum);
+    </script>
+  </head>
+  <body></body>
+</html>

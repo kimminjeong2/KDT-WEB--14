@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>조건문 실습1, 2</title>
+    <!--
+    <script>
+      let age = prompt("나이입력");
+      age = Number(age);
+
+      if (age > 20) {
+        console.log("성인");
+      } else if (age > 17) {
+        console.log("고등학생");
+      } else if (age > 14) {
+        console.log("중학생");
+      } else if (age > 8) {
+        console.log("초등학생");
+      } else if (age > 0) {
+        console.log("유아");
+      } else {
+        console.log("잘못된 입력입니다.");
+      }
+    </script>
+  -->
+    <script>
+      let now = new Date().getHours();
+
+      if (now === 0) {
+        console.log("자정");
+      } else if (now === 12) {
+        console.log("정오");
+      } else if (now > 12) {
+        console.log("오후 " + (now - 12) + "시"); // 오후 시간
+      } else {
+        console.log("오전 " + now + "시"); // 오전 시간
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
