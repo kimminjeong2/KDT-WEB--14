@@ -29,7 +29,7 @@
             });
             console.log(sum3);*/
 
-      let fruit1 = [
+      let fruits1 = [
         "사과",
         "딸기",
         "파인애플",
@@ -39,22 +39,25 @@
         "자두",
         "망고",
       ];
-      let fruit2 = ["수박", "사과", "참외", "오렌지", "파인애플", "망고"];
+      let fruits2 = ["수박", "사과", "참외", "오렌지", "파인애플", "망고"];
 
-      const same4 = [];
-      const diff4 = [];
-      for (let fruit of fruits1) {
-        if (fruits2.includes(fruit) ? same4.push(fruit) : diff4.push(fruit));
+      let same = [];
+      let diff = [];
+      for (let i = 0; i < fruits1.length; i++) {
+        if (fruits2.includes(fruits1[i])) {
+          same.push(fruits1[i]);
+        } else {
+          diff.push(fruits1[i]);
+        }
       }
-      console.log("same", same4);
-      console.log("diff", diff4);
+      console.log(same);
+      console.log(diff);
 
-      //2
-
-      let same3 = fruits1.filter((fruit) => fruits2.includes(fruit));
-      console.log("same", same3);
-      let diff3 = fruits1.filter((fruit) => !fruits2.includes(fruit));
-      console.log("diff", diff3);
+      // 2 filter 와 includesd 이용
+      let same2 = fruits1.filter((fr) => fruits2.includes(fr));
+      let diff2 = fruits1.filter((fr) => !fruits2.includes(fr));
+      console.log(same2);
+      console.log(diff2);
     </script>
   </head>
   <body></body>
