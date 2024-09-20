@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배열과 반복문 실습</title>
+    <script>
+      /* 실습1
+            const arr1 = [];
+            let sum = 0;
+            let sum2 = 0;
+            let sum3 = 0;
+            for (let i = 1; i <= 100; i++) {
+              arr1.push(i);
+            }
+
+            for (let i = 0; i < arr1.length; i++) {
+              sum += arr1[i];
+            }
+            console.log(sum);
+
+            for (let number of arr1) {
+              sum2 += number;
+            }
+            console.log(sum2);
+
+            arr1.forEach((number) => {
+              sum3 += number;
+            });
+            console.log(sum3);*/
+
+      let fruit1 = [
+        "사과",
+        "딸기",
+        "파인애플",
+        "수박",
+        "참외",
+        "오렌지",
+        "자두",
+        "망고",
+      ];
+      let fruit2 = ["수박", "사과", "참외", "오렌지", "파인애플", "망고"];
+
+      const same4 = [];
+      const diff4 = [];
+      for (let fruit of fruits1) {
+        if (fruits2.includes(fruit) ? same4.push(fruit) : diff4.push(fruit));
+      }
+      console.log("same", same4);
+      console.log("diff", diff4);
+
+      //2
+
+      let same3 = fruits1.filter((fruit) => fruits2.includes(fruit));
+      console.log("same", same3);
+      let diff3 = fruits1.filter((fruit) => !fruits2.includes(fruit));
+      console.log("diff", diff3);
+    </script>
+  </head>
+  <body></body>
+</html>
