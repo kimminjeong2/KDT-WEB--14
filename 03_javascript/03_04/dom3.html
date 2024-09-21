@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM 다른노드 접근</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box" id="green">1</div>
+      previous 테스트
+      <div class="box" id="red">2</div>
+      next 테스트
+      <div class="box">3</div>
+    </div>
+
+    <button onclick="getParent">getParent</button>
+    <button onclick="pElSibling">pElSibling</button>
+    <button onclick="pNoSiBling">pNoSiBling</button>
+    <button onclick="nElSibling">nElSibling</button>
+    <button onclick="nNoSiBling">nNoSiBling</button>
+
+    <script>
+      let container = document.querySelector(".containner");
+      let greenbox = document.getElementById("green");
+      let redbox = document.getElementById("red");
+
+      // 자식요소 접근
+      console.log("children :", container.children);
+
+      // parentNode 부모 요소 접근
+      function getParen() {
+        console.log(greenbox.parentNode);
+      }
+
+      // 이전 형제
+      function pElSibling() {
+        console.log(redbox.previousElementSibling); // HTML 요소만
+      }
+
+      function pNoSiBling() {
+        console.log(redbox.previousElementNoSibling); // 모든 노드 요소 (텍스트 등)
+      }
+      // 다음 형제
+      function pElSibling() {
+        console.log(redbox.previousElementSibling); // HTML 요소만
+      }
+
+      function pNoSiBling() {
+        console.log(redbox.previousElementNoSibling); // 모든 노드 요소 (텍스트 등)
+      }
+    </script>
+  </body>
+</html>
