@@ -218,9 +218,11 @@
       console.log(emill);
       console.log(city);
       */
+      /*
       const multiply = (a, b) => a * b;
 
       console.log(multiply(2, 3)); // 6
+      */
     </script>
   </head>
   <body>
@@ -248,5 +250,70 @@
       two.innerHTML = "<strong>강조</strong>";
       two.textContent = "      textContent<strong>강조</strong>.    &   !";
     </script>
-  --></body>
+  -->
+    <div class="container">
+      <div class="box" id="green">1</div>
+      <div class="box">2</div>
+    </div>
+
+    <input type="text" name="userName" />
+
+    <div id="parent">
+      Text
+      <div id="two">div 두번째 Text</div>
+      <div>div 세번째 Text</div>
+    </div>
+    <script>
+      let parent = document.getElementById("parent");
+      console.log(parent);
+
+      // 1. 자식 값을 가져옴
+      let parentChildren = parent.children; // HTMLCollection
+      let parentChildNodes = parent.childNodes; // NodeList
+
+      console.log("parentChildren :", parentChildren); // 태그 요소만 2
+      console.log("parentChildNodes :", parentChildNodes); // 태그, 속성,텍스트 모두포함5
+
+      //HTMLCollection 에서 자식 요소 접근 - namedItem
+      console.log("namedItem :", parentChildren.namedItem("two"));
+
+      // 2. 자식 추가 (요소 추가)
+      let child = document.createElement("div"); // 요소 생성
+      child.innerText = "네번째 Text"; // 요소 내용물 추가
+      parent.appendChild(child); // 자식 요소 추가
+
+      let two = document.getElementById("two");
+      two.innerHTML = "강조";
+      two.innerText = "강조innerText";
+      two.innerHTML = "<strong>강조</strong>";
+      two.textContent = "      textContent<strong>강조</strong>.    &   !";
+
+      console.log("공백 문자 반환 textContent :", two.textContent);
+      console.log("공백 문자 제거 innerText :", two.innerText);
+    </script>
+
+    <script>
+      let dom = document.querySelector(".box");
+      console.log(dom);
+
+      let dom2 = document.querySelectorAll(".box");
+      console.log(dom2);
+
+      let dom3 = document.getElementById("green");
+      console.log(dom3);
+
+      let dom4 = document.getElementsByClassName("box");
+      console.log(dom4);
+
+      for (let i = 0; i < dom4.length; i++) {
+        console.log("dom4[i] :", dom4[i]);
+      }
+
+      let dom5 = document.getElementsByTagName("div");
+      console.log(dom5);
+
+      let dom6 = document.getElementsByName("userName");
+      console.log(dom6);
+    </script>
+  </body>
 </html>
