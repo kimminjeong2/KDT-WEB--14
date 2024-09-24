@@ -1,18 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>혼자 코딩</title>
-  </head>
-  <body>
+    <!-- TODO1: jQuery CDN 불러오기 -->
+    <!--기본 jQuery CDN-->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- jQuery UI CDN (switchClass용)-->
+    <script
+      src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
+      integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+      }
+
+      div:hover {
+        cursor: pointer;
+      }
+
+      .red {
+        background-color: red;
+      }
+
+      .orange {
+        background-color: orange;
+      }
+
+      .yellow {
+        background-color: yellow;
+      }
+
+      .green {
+        background-color: green;
+      }
+
+      .blue {
+        background-color: blue;
+      }
+
+      .purple {
+        background-color: purple;
+      }
+    </style>
     <script>
-      /*
-      let mathScore = "77";
-      let engScore = "88";
-      let avgScore = (Number(mathScore) + Number(engScore)) / 2;
-      console.log(avgScore);
-      */
+      let colors = ["red", "orange", "yellow", "green", "blue", "purple"];
+      let index = 0;
+
+      function changeColor() {
+        const nextColor = colors[(index + 1) % colors.length]; // 다음 색상
+        $("div").switchClass(colors[index], nextColor, 400);
+        index = (index + 1) % colors.length;
+      }
     </script>
+  </head>
+
+  <body>
+    <div class="red" onclick="changeColor();"></div>
   </body>
 </html>

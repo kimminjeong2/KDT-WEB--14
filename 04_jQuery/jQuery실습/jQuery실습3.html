@@ -5,15 +5,8 @@
       type="text/javascript"
       src="https://code.jquery.com/jquery-3.5.0.min.js"
     ></script>
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-    ></script>
+
     <title>내 스케줄</title>
-    <!-- 1. 달력 view 만들기(html, css)
-    2. 달력에 날짜 클릭시 날짜에 input에 날짜가 채워지도록
-    3. 내용 input 에 내용 입력 후 등록버튼 누르면 달력의 날짜에 내용 추가 -->
 
     <style>
       td {
@@ -118,18 +111,13 @@
       let target;
 
       function writeSchedule() {
-        $("button").click(function () {
-          alert("클릭!");
-        });
+        // 이 함수를 채워주세요.
       }
-      $("input").keyup(function (e) {
-        console.log(e.target);
-      });
-
-      $("td").on("click", function () {
-        console.log(this);
-        console.log($(this).text());
-      });
     </script>
   </body>
 </html>
+<!--
+1. 달력 view 만들기(html, css)
+2. 달력에 날짜 클릭시 날짜에 input에 날짜가 채워지도록
+3. 내용 input 에 내용 입력 후 등록버튼 누르면 달력의 날짜에 내용 추가
+-->

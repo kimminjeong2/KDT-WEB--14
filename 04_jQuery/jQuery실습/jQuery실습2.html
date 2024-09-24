@@ -50,11 +50,19 @@
       let index = 0;
       // TODO2: changeColor 함수 내부 작성
 
+      /* 이 방법은 지우고 더하고 하는 거라 보라색에서 멈춤 ( 끝은 보라지우고 보라넣기 반복)*/
       function changeColor() {
         $("div").removeClass(colors[index]);
         $("div").addClass(colors[index]);
         index = (index + 1) % colors.length;
       }
+      /* 이 방법은 switchClass 사용, 그리고 보라색에서 빨간색으로 계속 반복하게 해줌
+      function changeColor() {
+        const nextColor = colors[(index + 1) % colors.length]; // 다음 색상
+        $("div").switchClass(colors[index], nextColor, 400);
+        index = (index + 1) % colors.length;
+      }
+      */
     </script>
   </head>
 
