@@ -108,11 +108,43 @@
     </table>
 
     <script>
-      let target;
+      let target; // 클릭한 요소 저장
+
+      // 날짜 클릭 했을 떄 이벤트 함수
+      $("td > p").on("click", function (e) {
+        console.log(e.target);
+        console.log(e.target.textContent); // 날짜
+
+        // jQurey
+        console.log($(e.target).text()); // 날짜
+
+        // 날짜 input 요소 선택, 값 넣기
+        $("#date").val($(e.target).text());
+
+        target = e.target;
+      });
 
       function writeSchedule() {
         // 이 함수를 채워주세요.
+        // 날짜, 내용 입력칸에 값이 이미 존재
+
+        let content = $("#content").val();
+        $(target).parent().append(`<span>${content}</span><br/>`);
+
+        $("#content").val("");
+        $("#date").val("");
       }
+
+      /* let content = $("#content").val();
+        let date = $("#date").val();
+
+        console.log(date);
+        console.log(target);
+        if (target) {
+          $(target).append(`<p>${date}: ${content}</p>`); // 입력된 날짜와 내용을 추가
+        }
+      }
+        */
     </script>
   </body>
 </html>
