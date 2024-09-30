@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연습 MBTI 테스트</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      h1 {
+        background-color: burlywood; /* 연한 노란색 배경 */
+        border-radius: 15px; /* 둥근 모서리 */
+        padding: 10px; /* 내부 여백 */
+        display: inline-block; /* 내용에 맞게 박스 크기 조정 */
+      }
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        max-width: 600px;
+        margin: auto;
+        text-align: center;
+        background-image: url(./nnnnn.jpg);
+      }
+      .question {
+        margin: px 0; /* 질문과 답변 간격 증가 */
+      }
+      .question p {
+        font-size: 24px; /* 원하는 크기로 설정 */
+        font-weight: bold; /* 필요 시 굵게 설정 */
+      }
+      .answers {
+        display: flex; /* 답변들을 가로로 배치 */
+        justify-content: center; /* 중앙 정렬 */
+        margin-top: 100px; /* 답변과 질문 간격 증가 */
+      }
+      .form-check {
+        display: inline-block; /* 답변을 가로로 배열 */
+        margin-right: 50px; /* 답변 간격 */
+        background-color: rgba(255, 255, 204, 0.6); /* 연한 노란색 배경 */
+        border-radius: 10px; /* 둥근 모서리 */
+        padding: 10px; /* 패딩 추가 */
+        cursor: pointer; /* 포인터 커서 */
+      }
+      .form-check.selected {
+        border: 2px solid yellowgreen; /* 선택된 답변의 테두리 색상 */
+      }
+      #resultImage {
+        display: none;
+        margin-top: 20px;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="mb-4">MBTI 테스트</h1>
+    <br /><br /><br /><br />
+    <div id="quiz" class="mb-4"></div>
+    <button id="next" class="btn btn-primary mr-2">다음 질문</button>
+    <button id="submit" class="btn btn-success">결과 보기</button>
+    <div class="result" id="result" class="mt-4"></div>
+    <img id="resultImage" src="" alt="결과 이미지" class="img-fluid" />
+
+    <script>
+      const questions = [
+        {
+          question: "나에게 실망한 하루. 어떻게 기분전환을 할까?",
+          type1: "E",
+          type2: "I",
+          answers: [
+            "아는 친구들 불러모아 흥이 많고 사교성 좋은 애들로만",
+            "일단 집에 가서 침대에 눕자,,,",
+          ],
+        },
+        {
+          question: "처음 본 사람이 스몰토크를 하는데,,,",
+          type1: "I",
+          type2: "E",
+          answers: [
+            "아 네..네...네....",
+            "날씨가 풀려서 다행이에요. <br>이번 여름 너무 더웠어 진짜",
+          ],
+        },
+        {
+          question: "있잖아,,,나 우울해서 빵을 샀어",
+          type1: "T",
+          type2: "F",
+          answers: ["음 그랬구나", "왜 우울해 ㅜㅜ 다 말해"],
+        },
+        {
+          question: "오후엔 덥고 저녁엔 춥고 ㅜㅜ",
+          type1: "F",
+          type2: "T",
+          answers: [
+            "그니까 ㅜㅜ 하나만 해라 하나만 ㅜㅜ",
+            "그건 간절기라 그래",
+          ],
+        },
+        {
+          question: "노래들을 때 뭐가 중요해?",
+          type1: "S",
+          type2: "N",
+          answers: [
+            "멜로디가 좋아야 흥얼거릴 수 있지!",
+            "가사가 와닿아야 음악 아인교~",
+          ],
+        },
+        {
+          question: "갑자기 죽으면 어떡하지?",
+          type1: "N",
+          type2: "S",
+          answers: [
+            "죽으면 사후는 어떻게 되는거지? <br>천국 갈까? 신과 함께처럼 재판 받나? <br>이제부터 착하게 살게요 ㅜㅜ",
+            "죽으면 그냥 죽는 거지.",
+          ],
+        },
+        {
+          question: "오랜만에 요리 좀 해볼까?",
+          type1: "P",
+          type2: "J",
+          answers: [
+            "음식은 손맛! 내 손이 움직이는 대로 난 개쩌는 요리사",
+            "레시피 좀 먼저 찾아볼까??",
+          ],
+        },
+        {
+          question: "엄청난 맛집 발견! 들어가 보자",
+          type1: "J",
+          type2: "P",
+          answers: [
+            "이게 best 메뉴라 하니까 이걸 먹으면 되겠네. 이건 면이니까 밥도 하나 시켜야 겠다.",
+            "(메뉴를 보고) 와씨 맛집 스멜~ 다시켜",
+          ],
+        },
+      ];
+
+      let scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+      let currentQuestionIndex = 0;
+
+      function loadQuestion() {
+        const quizContainer = document.getElementById("quiz");
+        const question = questions[currentQuestionIndex];
+        quizContainer.innerHTML = `
+                <div class="question">
+                    <p>${question.question}</p>
+                    <div class="answers">
+                        <div class="form-check" data-value="${question.type1}">
+                            <label class="form-check-label">${question.answers[0]}</label>
+                        </div>
+                        <div class="form-check" data-value="${question.type2}">
+                            <label class="form-check-label">${question.answers[1]}</label>
+                        </div>
+                    </div>
+                </div>
+            `;
+        document.getElementById("submit").style.display = "none";
+        document.getElementById("next").style.display = "inline";
+      }
+
+      document.getElementById("quiz").addEventListener("click", (event) => {
+        if (event.target.closest(".form-check")) {
+          const selected = event.target.closest(".form-check");
+          const selectedValue = selected.getAttribute("data-value");
+
+          // 선택된 답변 처리
+          document.querySelectorAll(".form-check").forEach((item) => {
+            item.classList.remove("selected"); // 모든 선택 해제
+          });
+          selected.classList.add("selected"); // 선택된 답변 강조
+
+          // 점수 기록
+          scores[selectedValue] += 1;
+        }
+      });
+
+      document.getElementById("next").addEventListener("click", () => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+          loadQuestion();
+        } else {
+          document.getElementById("next").style.display = "none";
+          document.getElementById("submit").style.display = "inline";
+        }
+      });
+
+      document.getElementById("submit").addEventListener("click", () => {
+        calculateMBTI();
+        document.getElementById("quiz").style.display = "none"; // 질문 숨기기
+        document.getElementById("next").style.display = "none"; // 다음 질문 버튼 숨기기
+        document.getElementById("submit").style.display = "none"; // 결과 보기 버튼 숨기기
+      });
+
+      function calculateMBTI() {
+        const mbti = [
+          scores["E"] > scores["I"] ? "E" : "I",
+          scores["S"] > scores["N"] ? "S" : "N",
+          scores["T"] > scores["F"] ? "T" : "F",
+          scores["J"] > scores["P"] ? "J" : "P",
+        ].join("");
+
+        document.getElementById(
+          "result"
+        ).innerText = `당신의 MBTI는: ${mbti}입니다.`;
+
+        // 결과 이미지 설정
+        const imageUrl = `images/${mbti}.png`;
+        document.getElementById("resultImage").src = imageUrl;
+        document.getElementById("resultImage").style.display = "block";
+      }
+
+      loadQuestion();
+    </script>
+  </body>
+</html>

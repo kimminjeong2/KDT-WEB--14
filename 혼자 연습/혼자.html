@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Toggle with Animation</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      #collapseContent {
+        max-height: 0; /* 초기에는 숨김 */
+        overflow: hidden; /* 내용이 넘치지 않도록 숨김 */
+        transition: max-height 0.5s ease; /* 애니메이션 효과 */
+      }
+      .show {
+        max-height: 120px; /* 보여줄 때의 최대 높이 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <p>
+        <button class="btn btn-primary" id="toggleButton" type="button">
+          토글
+        </button>
+      </p>
+      <div style="min-height: 120px">
+        <div id="collapseContent" class="card card-body" style="width: 300px">
+          안녕하세요! 부트스트랩 입니당!!
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const toggleButton = document.getElementById("toggleButton");
+      const collapseContent = document.getElementById("collapseContent");
+
+      toggleButton.addEventListener("click", () => {
+        collapseContent.classList.toggle("show"); // 'show' 클래스를 토글
+      });
+    </script>
+  </body>
+</html>
