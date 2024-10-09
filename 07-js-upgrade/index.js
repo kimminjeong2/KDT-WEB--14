@@ -1,5 +1,5 @@
-// 구조 분해 할장
-// 1. 배열 에서의 구조분해할장
+// 구조 분해 할당
+// 1. 배열 에서의 구조분해할당
 // - 배열 구조 분해 할당 시 "순서" 중요
 // [변수1, 변수2, ...] = 배열
 const arr1 = [1, 2, 3, 4, 5];
@@ -17,9 +17,9 @@ console.log(f1, f2, f3); // apple grape orange
 
 let num1 = 1;
 let num2 = 3;
-console.log("swap전 >", num1, num2);
+console.log("swap전 >", num1, num2); // swap전 > 1 3
 [num2, num1] = [num1, num2]; // [num2, num1] = [1, 3]
-console.log("swap후 >", num1, num2);
+console.log("swap후 >", num1, num2); // swap후 > 3 1
 
 // 2.  객체 구조 분해 할당
 // - 변수를 선언하는 순서는 중요하지 않음
@@ -31,18 +31,18 @@ const obj = {
   content: "스릴러",
   num: 1,
 };
-// 객체 구조 분해 쓰지 ㅏㅇㄴㅎ았을 때
-console.log(obj.title, obj.content, obj.num);
-console.log(obj["title"]);
+// 객체 구조 분해 쓰지 않았을 때
+console.log(obj.title, obj.content, obj.num); // 조커 스릴러 1
+console.log(obj["title"]); // 조커
 
 // 객체 구조 분해 할당
 // key 가 존재하지 않을 때를 대비하여 = 연산자로  default 값을 할당
 const { title, constalled, num, star } = obj;
-console.log(title, constalled, num, star);
+console.log(title, constalled, num, star); //조커 undefined 1 undefined
 
 // 콜론(:)을 이용하면 새 변수명으로 바꿔서 저장 가능
 const { title: t1 } = obj;
-console.log(t1);
+console.log(t1); // 조커
 
 const lectureInfo = {
   name: "KDT web 14th",
@@ -57,7 +57,7 @@ function getInfo(lecture) {
 }
 
 const result = getInfo(lectureInfo);
-console.log(result);
+console.log(result); // KDT web 14th 강의는 WEB 개발을 공부 합니다!
 
 /////////////////////////
 // 단축 평가
@@ -67,7 +67,7 @@ console.log(result);
 // A || B : 두 개의 피연산자 중에서  하나만 true 여도 true반환
 
 console.log(true && true); // true
-console.log(false && true); // faluse
+console.log(false && true); // false
 
 console.log(true || true); //true
 console.log(false || true); //true
@@ -77,7 +77,7 @@ const yy = 7;
 
 // 삼항연산자 예시
 const result1 = xx > yy ? "xx가 큼" : "yy가 큼";
-console.log(result1);
+console.log(result1); //yy가 큼
 
 // 단축평가
 const result2 = xx > yy && "xx가 큼";
