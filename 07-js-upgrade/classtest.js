@@ -4,7 +4,7 @@
 // 집이라는 객체를 만들어보자!
 /**
  * 속성
- * 만들어지 연도
+ * 만들어진 연도
  * 집의 이름
  * 창문갯수 ...
  *
@@ -52,7 +52,7 @@ class Apartment extends House {
   }
 
   getAptInfo() {
-    return `${this.year}년에 지어진 ${this.name} 아팥의 총 층수는 ${this.floor}`;
+    return `${this.year}년에 지어진 ${this.name} 아파트의 총 층수는 ${this.floor}`;
   }
 }
 
