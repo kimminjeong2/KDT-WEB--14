@@ -26,7 +26,7 @@ const potatochip = {
 console.log(potatochip); // {base: 'chip', company: 'lotte', flavor: 'potato'}
 
 const sweetPotatoChip = {
-  ...sweetPotatoChip,
+  ...chip,
   flavor: "sweet PotatoChip",
 };
 console.log(sweetPotatoChip);
