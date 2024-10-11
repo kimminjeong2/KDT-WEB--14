@@ -53,6 +53,7 @@ printFruits();
 //////////////////////////
 
 function goMart() {
+  햣;
   console.log("마트에 가서 어떤 음료를 살지 고민한다..");
 }
 
