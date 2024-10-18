@@ -1,5 +1,4 @@
-// 밑 실습 때문에 잠시 주석 처리함
-//const Comment = require("../model/Comment");
+const Comment = require("../model/Comment");
 
 // GET /
 const main = (req, res) => {
@@ -34,12 +33,3 @@ const comment = (req, res) => {
 };
 
 module.exports = { main, comments, comment };
-
-// 실습1. MVC (controller)
-const Comment = require("../model/Comment");
-
-exports.login = (req, res) => {
-  const { userId, userPw } = req.body;
-  const result = validateUser(userId, userPw);
-  res.json(result);
-};

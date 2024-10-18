@@ -17,6 +17,10 @@ app.use(express.json());
 const indexRouter = require("./routes/index"); // index는 생략 가능!
 app.use("/", indexRouter); // localhost:PORT/ 경로를 기본으로 ./routes/index.js 파일에 선언한 대로 동작
 
+// 실습
+const userRouter = require("./routes/user");
+app.use("/user", userRouter); // localhost:PORT/user 경로를 기본으로 user.js 라우트 파일에서 처리
+
 // [404 error]
 // 맨 마지막 라우트로 선언
 app.get("*", (req, res) => {
@@ -25,20 +29,4 @@ app.get("*", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
-});
-
-// 실습1. MVC (app.js)
-
-const userInfo = {
-  id: "banana",
-  pw: "1234",
-};
-
-app.post("/practice2", (req, res) => {
-  console.log(req.body);
-  if (userInfo.id === req.body.userId && userInfo.pw === req.body.userPw) {
-    res.json({ userInfo: req.body, isSuccess: true });
-  } else {
-    res.json({ isSuccess: false });
-  }
 });
