@@ -26,3 +26,19 @@ app.get("*", (req, res) => {
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
 });
+
+// 실습1. MVC (app.js)
+
+const userInfo = {
+  id: "banana",
+  pw: "1234",
+};
+
+app.post("/practice2", (req, res) => {
+  console.log(req.body);
+  if (userInfo.id === req.body.userId && userInfo.pw === req.body.userPw) {
+    res.json({ userInfo: req.body, isSuccess: true });
+  } else {
+    res.json({ isSuccess: false });
+  }
+});

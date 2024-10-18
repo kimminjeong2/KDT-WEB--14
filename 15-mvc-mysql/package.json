@@ -1,5 +1,5 @@
 {
-  "name": "14-mvc",
+  "name": "15-mvc-mysql",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -8,10 +8,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^4.21.1",
-    "multer": "^1.4.5-lts.1"
-  },
-  "description": ""
+    "mysql2": "^3.11.3"
+  }
 }

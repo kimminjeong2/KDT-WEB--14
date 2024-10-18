@@ -27,3 +27,13 @@ exports.commentInfos = () => {
     },
   ];
 };
+
+// 실습1. MVC (model)
+const users = [{ userId: "banana", userPw: "1234" }];
+
+function validateUser(userId, userPw) {
+  const user = users.find((u) => u.userId === userId && u.userPw === userPw);
+  return user ? { isSuccess: true, userInfo: user } : { isSuccess: false };
+}
+
+module.exports = { validateUser };
