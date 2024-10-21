@@ -26,7 +26,7 @@ const post_visitor = async (req, res) => {
   res.json({ id: data.insertId, name, comment });
 };
 
-//  GET /visitor or /visitor/:id
+// GET /visitor or /visitor/:id
 const get_visitor = async (req, res) => {
   console.log(req.query);
   console.log(req.params);

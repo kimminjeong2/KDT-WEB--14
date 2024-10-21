@@ -23,14 +23,14 @@ async function createVisitor() {
   });
   const { id, name, comment } = data;
   const html = `
-        <tr id="tr_${id}">
-          <td>${id}</td>
-          <td>${name}</td>
-          <td>${comment}</td>
-          <td><button onclick="editVisitor()">수정</button></td>
-          <td><button onclick="deleteVisitor()">삭제</button></td>
-        </tr>
-      `;
+          <tr id="tr_${id}">
+            <td>${id}</td>
+            <td>${name}</td>
+            <td>${comment}</td>
+            <td><button onclick="editVisitor()">수정</button></td>
+            <td><button onclick="deleteVisitor()">삭제</button></td>
+          </tr>
+        `;
   // insertAdjacentHTML : 특정 요소에 html 추가
   const tbody = document.querySelector("tbody");
   tbody.insertAdjacentHTML("beforeend", html);
@@ -38,8 +38,8 @@ async function createVisitor() {
   form.reset();
 }
 
-// 수정 버튼 클릭시
-// - form input 값 넣기
+// 수정 버튼 클릭 시
+// - form input에 값 넣기
 // - 변경, 취소 버튼 보이기
 async function editVisitor(id) {
   // 1. form input에 값 넣기 (DB에서 받아서)
@@ -48,7 +48,6 @@ async function editVisitor(id) {
     // 1) req.query (서버 -> /visitor)
     // url: `/visitor?id=${id}`,
 
-    // 위와 같은방법임
     // url: "/visitor",
     // params: {
     //   id: id,
@@ -65,9 +64,9 @@ async function editVisitor(id) {
   form.comment.value = comment;
 
   const html = `
-          <button type="button" onclick="editDo(${id})">변경</button>
-          <button type="button" onclick="editCanale()">취소</button>
-`;
+        <button type="button" onclick="editDo(${id})">변경</button>
+        <button type="button" onclick="editCancle()">취소</button>
+  `;
   const btnGroup = document.querySelector("#button-group");
   btnGroup.innerHTML = html;
 }
@@ -103,13 +102,13 @@ async function editDo(id) {
   children[2].textContent = form.comment.value;
 
   // 입력창 초기화, 등록 버튼 보이기
-  editCanale();
+  editCancle();
 }
 
-// 취소버튼 클릭시
+// 취소 버튼 클릭시
 // - input 초기화
 // - 등록 버튼 보이기
-function editCanale() {
+function editCancle() {
   const form = document.forms["visitor-form"];
   form.reset();
 
@@ -118,7 +117,7 @@ function editCanale() {
   btnGroup.innerHTML = html;
 }
 
-// 삭제 버튼
+// 삭제 버튼 클릭시
 // - DB에 삭제
 // - 테이블에서 해당 행 삭제
 async function deleteVisitor(obj, id) {
@@ -131,6 +130,7 @@ async function deleteVisitor(obj, id) {
       id: id,
     },
   });
+
   console.log(obj); // button 요소
   obj.parentElement.parentElement.remove();
 }

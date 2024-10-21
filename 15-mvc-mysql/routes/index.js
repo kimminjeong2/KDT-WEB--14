@@ -17,10 +17,9 @@ router.post("/visitor", controller.post_visitor);
 router.get("/visitor", controller.get_visitor); // req.query
 router.get("/visitor/:id", controller.get_visitor); // req.params
 
-// PATCH /visitor 수정
+// PATCH /visitor
 router.patch("/visitor", controller.patch_visitor);
 
 // DELETE /visitor
 router.delete("/visitor", controller.delete_visitor);
-
 module.exports = router;

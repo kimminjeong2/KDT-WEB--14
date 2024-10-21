@@ -56,7 +56,7 @@ const getVisitor = async (id) => {
 };
 
 const patchVisitor = async ({ name, comment, id }) => {
-  const query = "UPDATE visitor SET name = ?, comment = ? WHERE id =?";
+  const query = "UPDATE visitor SET name = ?, comment = ? WHERE id = ?";
   const [result] = await pool.query(query, [name, comment, id]);
   console.log("update result", result);
   return result;
