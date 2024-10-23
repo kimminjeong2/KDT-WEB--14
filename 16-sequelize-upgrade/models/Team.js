@@ -1,13 +1,13 @@
 /**
- * Team 모델을 정의하는 함수
+ * team 모델을 정의하는 함수
  * @param {import('sequelize').Sequelize} Sequelize
  * @param {import('sequelize').DataTypes} DataTypes
  */
 const TeamModel = (Sequelize, DataTypes) => {
   return Sequelize.define(
-    "Team",
+    "team",
     {
-      Team_id: {
+      team_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         allowNull: false,

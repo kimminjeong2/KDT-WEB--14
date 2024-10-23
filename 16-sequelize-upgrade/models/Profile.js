@@ -3,7 +3,7 @@
  * @param {import('sequelize').Sequelize} Sequelize
  * @param {import('sequelize').DataTypes} DataTypes
  */
-const profileModel = (Sequelize, DataTypes) => {
+const ProfileModel = (Sequelize, DataTypes) => {
   return Sequelize.define(
     "profile",
     {
@@ -27,4 +27,4 @@ const profileModel = (Sequelize, DataTypes) => {
     }
   );
 };
-module.exports = profileModel;
+module.exports = ProfileModel;

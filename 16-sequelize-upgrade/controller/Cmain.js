@@ -1,6 +1,5 @@
 const { Op } = require("sequelize");
 const { Player, Profile, Team } = require("../models");
-const { search } = require("../routes");
 
 exports.index = (req, res) => {
   res.render("index");
@@ -83,7 +82,7 @@ exports.getTeams = async (req, res) => {
   try {
     // 쿼리 스트링 꺼내오기 (req.query)
     console.log(req.query);
-    const { sort } = req.query;
+    const { sort, search } = req.query;
     let teams;
 
     if (sort === "name_asc") {
@@ -93,7 +92,7 @@ exports.getTeams = async (req, res) => {
         order: [["name", "asc"]],
       });
     } else if (search) {
-      // search key에 대한 값이 있자면
+      // search key에 대한 값이 있다면
       teams = await Team.findAll({
         attributes: ["team_id", "name"],
         where: {
@@ -113,13 +112,14 @@ exports.getTeams = async (req, res) => {
   }
 };
 
-exports.getTeamsPlayers = async (req, res) => {
+exports.getTeamPlayers = async (req, res) => {
   try {
     const { team_id } = req.params;
     const teamPlayers = await Team.findOne({
       where: { team_id },
       include: [{ model: Player }], // join과 같은 역할
     });
+
     res.send(teamPlayers);
   } catch (err) {
     console.error(err);

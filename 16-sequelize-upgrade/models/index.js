@@ -31,7 +31,7 @@ Profile.belongsTo(Player, { foreignKey: "player_id" });
 Team.hasMany(Player, { foreignKey: "team_id" });
 Player.belongsTo(Team, { foreignKey: "team_id" });
 
-// 3) N:N 관계의 경우 새로운 모델이 생성된다.
+// 3) N:M 관계의 경우 새로운 모델이 생성된다
 Game.belongsToMany(Team, {
   through: "GameTeam",
   foreignKey: "team_id",

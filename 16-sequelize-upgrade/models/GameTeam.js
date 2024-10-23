@@ -1,5 +1,5 @@
 /**
- * Game과 team 연결 모델을 정의하는 함수
+ * game과 team 연결 모델을 정의하는 함수
  * @param {import('sequelize').Sequelize} Sequelize
  * @param {import('sequelize').DataTypes} DataTypes
  */

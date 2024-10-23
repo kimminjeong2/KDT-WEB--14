@@ -5,11 +5,11 @@
 ### 전체 선수 조회
 GET {{server}}/players
 
-#### 특정 선수 조회
+### 특정 선수 조회
 GET {{server}}/players/{{player_id}}
 
 ### 선수 추가
-POST {{server}}/players/
+POST {{server}}/players
 Content-Type: application/json; charset=UTF-8
 
 {
@@ -18,7 +18,7 @@ Content-Type: application/json; charset=UTF-8
   "team_id": 2
 }
 
-### 특정 선수의 소속 팀 변경
+### 특정 선수의 소속 팀 변경 
 PATCH {{server}}/players/{{player_id}}/team
 Content-Type: application/json; charset=UTF-8
 
@@ -26,7 +26,7 @@ Content-Type: application/json; charset=UTF-8
   "team_id": 2
 }
 
-### 특정 선수 삭제 (player_id 에 해당하는 Player, Profile 연쇄 삭제)
+### 특정 선수 삭제 (player_id에 해당하는 Player, Profile 연쇄 삭제)
 DELETE {{server}}/players/{{player_id}}
 
 ### 전체 팀 조회
