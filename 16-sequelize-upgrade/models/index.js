@@ -1,5 +1,4 @@
 const Sequelize = require("sequelize");
-const { FOREIGNKEYS } = require("sequelize/lib/query-types");
 const config = require(__dirname + "/../config/config.json")["development"];
 const db = {};
 
@@ -11,12 +10,15 @@ const sequelize = new Sequelize(
 ); // sequelize 객체 선언시 매개변수로 다음 정보들을 받음 : 데이터베이스명, 사용자, 비밀번호, 정보 전체
 
 // TODO: 모델 모듈 불러오기
-const Player = require("./player")(sequelize, Sequelize.DataTypes);
-const Profile = require("./profile")(sequelize, Sequelize.DataTypes);
+const Player = require("./Player")(sequelize, Sequelize.DataTypes);
+const Profile = require("./Profile")(sequelize, Sequelize.DataTypes);
+const Team = require("./Team")(sequelize, Sequelize.DataTypes);
+const Game = require("./Game")(sequelize, Sequelize.DataTypes);
+const GameTeam = require("./GameTeam")(sequelize, Sequelize.DataTypes);
 
 // TODO: 관계 형성
 
-// 1) plater : Profile = 1:1
+// 1) Player : Profile = 1:1
 Player.hasOne(Profile, {
   foreignKey: "player_id",
   onDelete: "CASCADE",
@@ -24,9 +26,24 @@ Player.hasOne(Profile, {
 });
 Profile.belongsTo(Player, { foreignKey: "player_id" });
 
-// TODO: 관계 정의한 모델들의 db객체에 저장
+// 2) Team : Player = 1 : N
+// 한 팀에는 여러 선수가 존재
+Team.hasMany(Player, { foreignKey: "team_id" });
+Player.belongsTo(Team, { foreignKey: "team_id" });
+
+// 3) N:N 관계의 경우 새로운 모델이 생성된다.
+Game.belongsToMany(Team, {
+  through: "GameTeam",
+  foreignKey: "team_id",
+});
+Team.belongsToMany(Game, { through: "GameTeam", foreignKey: "game_id" });
+
+// TODO: 관계 정의한 모델들을 db 객체에 저장
 db.Player = Player;
 db.Profile = Profile;
+db.Team = Team;
+db.Game = Game;
+db.GameTeam = GameTeam;
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

@@ -1,24 +1,24 @@
 /**
- * profile 모델을 정의하는 함수
+ * Game 모델을 정의하는 함수
  * @param {import('sequelize').Sequelize} Sequelize
  * @param {import('sequelize').DataTypes} DataTypes
  */
-const profileModel = (Sequelize, DataTypes) => {
+const GameModel = (Sequelize, DataTypes) => {
   return Sequelize.define(
-    "profile",
+    "Game",
     {
-      profile_id: {
+      game_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         allowNull: false,
         autoIncrement: true,
       },
-      position: {
+      name: {
         type: DataTypes.STRING(63),
         allowNull: false,
       },
-      salary: {
-        type: DataTypes.INTEGER,
+      place: {
+        type: DataTypes.STRING(63),
         allowNull: false,
       },
     },
@@ -27,4 +27,4 @@ const profileModel = (Sequelize, DataTypes) => {
     }
   );
 };
-module.exports = profileModel;
+module.exports = GameModel;

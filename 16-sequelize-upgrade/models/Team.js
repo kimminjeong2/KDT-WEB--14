@@ -1,24 +1,20 @@
 /**
- * profile 모델을 정의하는 함수
+ * Team 모델을 정의하는 함수
  * @param {import('sequelize').Sequelize} Sequelize
  * @param {import('sequelize').DataTypes} DataTypes
  */
-const profileModel = (Sequelize, DataTypes) => {
+const TeamModel = (Sequelize, DataTypes) => {
   return Sequelize.define(
-    "profile",
+    "Team",
     {
-      profile_id: {
+      Team_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         allowNull: false,
         autoIncrement: true,
       },
-      position: {
+      name: {
         type: DataTypes.STRING(63),
-        allowNull: false,
-      },
-      salary: {
-        type: DataTypes.INTEGER,
         allowNull: false,
       },
     },
@@ -27,4 +23,4 @@ const profileModel = (Sequelize, DataTypes) => {
     }
   );
 };
-module.exports = profileModel;
+module.exports = TeamModel;
