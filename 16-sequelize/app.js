@@ -22,7 +22,7 @@ app.get("*", (req, res) => {
   res.render("404");
 });
 
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync({ force: false }).then(() => {
   // force: false => 테이블이 없으면 생성
   // force: true => 테이블 무조건 생성 (만약 테이블이 있다면 다 삭제하고 다시 생성 -> prod에서 사용 X)
   app.listen(PORT, () => {

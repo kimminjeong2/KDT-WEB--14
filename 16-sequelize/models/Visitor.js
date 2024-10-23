@@ -5,10 +5,10 @@
  * @param {import('sequelize').DataTypes} DataTypes
  */
 const Visitor = (Sequelize, DataTypes) => {
-  // Sequelize.defind(param1, param2, param3)
-  // param1 : 모델 이름 설정
-  // param2 : 컬럼 정의
-  // param3 : 모델 옵션 정의
+  // Sequelize.define(param1, param2, param3)
+  // param1: 모델 이름 설정
+  // param2: 컬럼 정의
+  // param3: 모델 옵션 정의
   return Sequelize.define(
     "visitor",
     {
@@ -24,18 +24,14 @@ const Visitor = (Sequelize, DataTypes) => {
         type: DataTypes.STRING(10),
         allowNull: false,
       },
-      pw: {
-        type: DataTypes.TEXT("medium"),
-        allowNull: false,
-      },
       comment: {
         // comment mediumtext
         type: DataTypes.TEXT("medium"),
       },
     },
     {
-      // tableName: "visitor2", // 실제 DB테이블 이름 명시, 값을 안주면 param1 + s 값으로 테이블 생성
-      freezeTableName: true, // 모델 이름 그래로 테이블 이름 고정
+      // tableName: "visitor2", // 실제 DB 테이블 이름 명시, 값을 안주면 param1 + s 값으로 테이블 생성
+      freezeTableName: true, // 모델 이름 그대로 테이블 이름 고정
       timestamps: false,
       // - 데이터가 추가되고 수정된 시간을 자동으로 컬럼으로 만들어서 기록함
     }

@@ -11,7 +11,6 @@ const sequelize = new Sequelize(
 
 // models/Visitor.js에서 정의한 model이 db 에 들어감
 db.Visitor = require("./Visitor")(sequelize, Sequelize.DataTypes);
-
 db.User = require("./User")(sequelize, Sequelize.DataTypes);
 
 db.sequelize = sequelize;
