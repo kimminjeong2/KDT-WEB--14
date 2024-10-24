@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>홈페이지</title>
+  </head>
+  <body>
+    <h1>실습. Session 연습</h1>
+    <p>여기는 HOME 입니다!</p>
+
+    <% if (session.loggedIn) { %>
+    <p><%= session.userid %>님, 환영합니다!</p>
+    <a href="/index">로그아웃</a>
+    <% } else { %>
+    <p>아직 로그인을 하지 않으셨군요!</p>
+    <a href="/login">로그인</a>
+    <% } %>
+  </body>
+</html>
