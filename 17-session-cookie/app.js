@@ -1,66 +1,67 @@
-// 실습 views/header.ejs, index.ejs, session.ejs
 const express = require("express");
 const session = require("express-session");
-const path = require("path");
 const app = express();
 const PORT = 8000;
 
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
-
 app.use(express.urlencoded({ extended: true }));
-app.use(
-  session({
-    secret: "myPracticeSecret",
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-      httpOnly: true,
-      maxAge: 60 * 1000, // 60초
-    },
-  })
-);
+app.use(express.json());
+
+// session 옵션 객체
+const sessionConfig = {
+  secret: "mySessionSecret",
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    httpOnly: true,
+    maxAge: 60 * 1000, // 60초
+  },
+};
+
+app.use(session(sessionConfig));
 
 // 유저 정보
-const userInfo = { userid: "김민정", password: 1234 };
+const userInfo = { id: "banana", pw: "1234" };
 
 app.get("/", (req, res) => {
-  res.render("index", { session: req.session });
+  // req.session.user 값이 있는지 검사를 해서 isLogin 변수로 로그인 여부
+  const user = req.session.user; // "banana"
+  console.log("user > ", user);
+
+  if (user !== undefined) {
+    res.render("index", { isLogin: true, user: user });
+  } else {
+    res.render("index", { isLogin: false });
+  }
 });
 
 app.get("/login", (req, res) => {
   res.render("login");
 });
 
-app.get("/header", (req, res) => {
-  res.render("header");
-});
-
-// app.get("/login", (req, res) => {
-//   // req.session.키 = 값
-//   req.session.userid = "김민정";
-//   req.session.password = 1234;
-//   res.send("set session!");
-// });
-
-// 로그인 처리
 app.post("/login", (req, res) => {
-  const { userid, password } = req.body;
-  if (userid === "김민정" && password === 1234) {
-    req.session.loggedIn = true;
-    return res.redirect("/");
+  const { id, pw } = req.body;
+  if (id === userInfo.id && pw === userInfo.pw) {
+    // 로그인 성공 시 세션 생성
+    req.session.user = id;
+    res.redirect("/");
+  } else {
+    res.send("로그인 실패!");
   }
-  res.redirect("/header");
 });
 
-// 로그아웃 처리
 app.get("/logout", (req, res) => {
-  req.session.destroy((err) => {
-    if (err) {
-      console.error("로그아웃 실패 :", err);
-    }
-    res.redirect("/");
-  });
+  const user = req.session.user;
+
+  if (user !== undefined) {
+    req.session.destroy((err) => {
+      if (err) res.send("로그인 실패");
+      else res.redirect("/");
+    });
+  } else {
+    // 유저가 브라우저에 /logout로 접근 (로그인X)
+    res.send("잘못된 접근입니다");
+  }
 });
 
 app.listen(PORT, () => {
