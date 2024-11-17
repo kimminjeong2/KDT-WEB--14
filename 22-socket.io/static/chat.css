@@ -90,12 +90,15 @@
   color: #333;
   border-bottom-left-radius: 6px;
 }
+
+/* [실습3] 채팅창 입장 안내 문구 */
 .notice {
   text-align: center;
   color: #005397;
-  font-size: medium;
+  font-size: 12px;
 }
-.d-nne {
+
+.d-none {
   display: none;
 }
 
@@ -146,7 +149,7 @@ select.nickname-select::-ms-expand {
   color: #778da9; /* 딥 블루 */
 }
 
-/* [실습5] DM기능 추가 */
+/* [실습5] DM 기능 추가 */
 .sent.dm {
   background-color: #b388eb;
 }
