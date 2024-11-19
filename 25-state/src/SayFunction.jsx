@@ -1,24 +1,25 @@
-import React, { Component } from "react";
+import { useState } from "react";
 
-export default class Counter extends Component {
-  state = {
-    number: 0,
+export default function SayFunction() {
+  console.log(useState("welcome!")); // ['welcome!', f]
+  const [message, setMessage] = useState("welcome!");
+  // 'welcome!' : 상태 초기값, (숫자, 문자, 배열 값의 형태 자유로움)
+  // message : 메세지 상태
+  // setMessage() : message state 값을 바꾸는 함수
+
+  const onClickEnter = () => {
+    setMessage("안녕하세요~");
   };
-  render() {
-    // state는 this.state로 접근 가능
-    const { number } = this.state;
-    return (
-      <div>
-        <h1>{number}</h1>
-        <button
-          onClick={() => {
-            // this.setState(): state 값을 바꾸는 함수
-            this.setState({ number: number + 1 });
-          }}
-        >
-          +1
-        </button>
-      </div>
-    );
-  }
+
+  const onClickLeave = () => {
+    setMessage("안녕히 가세요~");
+  };
+
+  return (
+    <div>
+      <button onClick={onClickEnter}>입장</button>
+      <button onClick={onClickLeave}>퇴장</button>
+      <h1>{message}</h1>
+    </div>
+  );
 }
