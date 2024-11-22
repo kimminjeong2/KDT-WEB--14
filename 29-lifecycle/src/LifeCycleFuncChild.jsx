@@ -13,9 +13,9 @@ export default function LifeCycleFuncChild({ number }) {
     };
   }, []);
 
-  // mount + update 시점
+  // mount + update  시점
   useEffect(() => {
     console.log("컴포넌트 업데이트!!");
   }, [number]);
-  return <div>현재 number 값은 {number} 입니다</div>;
+  return <div>현재 number 값은 {number} 입니다 </div>;
 }

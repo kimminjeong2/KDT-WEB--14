@@ -3,13 +3,14 @@ import LifeCycleFuncChild from "./LifeCycleFuncChild";
 
 export default function LifeCycleFunc() {
   const [number, setNumber] = useState(0);
-  const [visible, setVisible] = useState(true);
+  const [visible, seVisible] = useState(true);
 
   const changeNumber = () => {
     setNumber(number + 1);
   };
+
   const changeVisible = () => {
-    setVisible(!visible);
+    seVisible(!visible);
   };
   return (
     <>
