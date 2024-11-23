@@ -1,13 +1,13 @@
-// import LifeCycleClass from "./LifeCycleClass";
-// import LifeCycleFunc from "./LifeCycleFunc";
+import LifeCycleClass from "./LifeCycleClass";
+import LifeCycleFunc from "./LifeCycleFunc";
 import Pr1 from "./Pr1";
 
 function App() {
   return (
     <div className="App">
-      {/* <LifeCycleClass /> */}
+      {/* <LifeCycleClass />
 
-      {/* <LifeCycleFunc /> */}
+      <LifeCycleFunc /> */}
 
       <Pr1 />
     </div>

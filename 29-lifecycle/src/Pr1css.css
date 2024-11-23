@@ -1,0 +1,32 @@
+.Post {
+  background-color: rgb(103, 166, 229);
+  align-content: center;
+  color: #fff;
+  text-align: center;
+}
+
+.post-box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  background-color: #b0caef;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+}
+
+.PP {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: rgb(61, 4, 61);
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 16px;
+  place-items: center;
+}
