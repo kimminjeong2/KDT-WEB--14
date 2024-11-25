@@ -44,3 +44,45 @@ export default function Pr1() {
 // 주어진 텍스트를 띄어쓰기 기준으로 나뉘어진 단어 내에 찾고자 하는 단어가 몇번 나타내는지 계산하는 함수 구현
 // useMemo로 해당함수의 결과 저장
 // 찾고자 하는 단어나 텍스트가 변경될 때만 계산 함수가 실행
+
+// 해답
+
+// import { useState, useMemo } from 'react';
+
+// export default function UseMemoPrac() {
+//   const [text, setText] = useState('');
+//   const [searchWord, setSearchWord] = useState('');
+
+//   // useMemo를 사용하여 단어 빈도수 계산 결과를 메모이제이션
+//   const countWord = useMemo(() => {
+//       // 입력받은 문자열와 찾고자 하는 단어가 빈 문자열이 아닌 경우에만 계산
+//       if (text.trim() && searchWord.trim()) {
+//         const words = text.split(' ');
+//         return words.filter((word) => word.includes(searchWord)).length;
+//       }
+//       // 빈 문자열인 경우 0 반환
+//       return 0;
+//     },
+//     [text, searchWord]
+//   );
+
+//   return (
+//     <>
+//       <input
+//         type='text'
+//         value={text}
+//         onChange={(e) => setText(e.target.value)}
+//         placeholder='텍스트를 입력하세요'
+//       />
+//       <input
+//         type='text'
+//         value={searchWord}
+//         onChange={(e) => setSearchWord(e.target.value)}
+//         placeholder='찾을 단어를 입력하세요'
+//       />
+//       <p>
+//         "{searchWord}" 단어의 빈도수: {countWord}
+//       </p>
+//     </>
+//   );
+// }
