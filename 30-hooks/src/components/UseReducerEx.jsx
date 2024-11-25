@@ -18,10 +18,10 @@ const reducer = (prevState, action) => {
 };
 
 export default function UseReducerEx() {
-  // reducer : state를 업데이트 하는 함수
+  // reducer : state 를 업데이트 하는 함수
   // dispatch : 액션 (state가 어떻게 변경되어야 하는지에 대한 힌트)을 발생시키는 함수
   // state : 현재 상태
-  // useReducer는 [state, dispatch] 를 리턴한다
+  // useReducer는 [state, dispatch] 를 리턴함
   const [state, dispatch] = useReducer(reducer, initState);
   return (
     <div>
