@@ -4,6 +4,7 @@ import SassComponent from "./Sasscomponent";
 import Pr12 from "./Pr12";
 import Pr13 from "./Pr13";
 import StyledComponent from "./StyledComponent";
+import Pr14 from "./Pr14";
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
       {/* <Pr13 /> */}
 
       <StyledComponent />
+      <hr />
+
+      <Pr14 />
     </div>
   );
 }
