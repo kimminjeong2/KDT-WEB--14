@@ -7,7 +7,8 @@ import Header from "./components/Header";
 import MainPage from "./pages/MainPage";
 import ProductPage from "./pages/ProductPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
-import Pr1 from "./pages/Pr1";
+import StudentHeader from "./components/StudentHeader";
+import StudentDetail from "./components/StudentDetail";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -37,7 +38,10 @@ function App() {
             path="/products/:id"
             element={<ProductDetailPage products={products} />}
           />
-          <Route path="/products/student/:student" element={<Pr1 />} />
+
+          {/* 실습 */}
+          <Route path="/student" element={<StudentHeader />} />
+          <Route path="/student/:name" element={<StudentDetail />} />
         </Routes>
       </BrowserRouter>
     </div>
